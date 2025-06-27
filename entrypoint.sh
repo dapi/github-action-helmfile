@@ -10,7 +10,7 @@ if [ -n "$env" ]; then
 fi
 
 if [ -n "$selectors" ]; then
-  selectors="-e $selectors"
+  selectors="-l $selectors"
 fi
 
 echo "Run helmfile with arguments: $command $env $selectors"
