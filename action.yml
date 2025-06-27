@@ -11,8 +11,7 @@ inputs:
     required: false
 outputs: {}
 runs:
-  using: docker
-  container: 
-    image: ghcr.io/helmfile/helmfile:latest
+  using: 'docker'
+  image: 'Dockerfile'
   args:
     - ${{ inputs.args }}
