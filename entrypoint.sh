@@ -13,4 +13,5 @@ if [ -n "$selectors" ]; then
   selectors="-e $selectors"
 fi
 
+echo "Run helmfile with arguments: $command $env $selectors"
 /usr/local/bin/helmfile $command $env $selectors
