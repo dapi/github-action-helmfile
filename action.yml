@@ -5,22 +5,23 @@ branding:
   icon: anchor
   color: blue
 inputs:
-  args:
+  command:
+    default: apply
     description: Helmfile command arguments
     required: false
-  #command:
-    #default: apply
-    #description: Helmfile command arguments
-    #required: false
-  #environment:
-    #default: ''
-    #description: Helmfile environment
-    #required: false
+  environment:
+    default: ''
+    description: Helmfile environment
+    required: false
+  selectors:
+    default: ''
+    description: Helmfile selectors
+    required: false
 outputs: {}
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args: ${{ inputs.args }}
-    #- ${{ inputs.command }}
-    #- "-e"
-    #- ${{ inputs.environment }}
+  args: 
+    - ${{ inputs.command }}
+    - ${{ inputs.environment }}
+    - ${{ inputs.selectors }}
