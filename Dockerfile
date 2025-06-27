@@ -1,3 +1,3 @@
 FROM ghcr.io/helmfile/helmfile:latest
-
-ENTRYPOINT ["/usr/local/bin/helmfile"]
+COPY ./entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
