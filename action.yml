@@ -1,0 +1,17 @@
+name: Helm & Helmfile Action
+description: Setup Helm and plugins, update repositories and applies configuration
+author: dapi
+branding:
+  icon: anchor
+  color: blue
+inputs:
+  args:
+    default: ''
+    description: Helmfile command arguments
+    required: false
+outputs: {}
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.args }}
