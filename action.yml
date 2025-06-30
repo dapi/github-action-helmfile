@@ -8,7 +8,7 @@ inputs:
   command:
     default: apply
     description: Helmfile command arguments
-    required: false
+    required: true
   environment:
     default: ''
     description: Helmfile environment
@@ -16,6 +16,10 @@ inputs:
   selectors:
     default: ''
     description: Helmfile selectors
+    required: false
+  extra:
+    default: ''
+    description: Extra arguments
     required: false
 outputs: {}
 runs:
@@ -25,3 +29,4 @@ runs:
     - ${{ inputs.command }}
     - ${{ inputs.environment }}
     - ${{ inputs.selectors }}
+    - ${{ inputs.extra }}
