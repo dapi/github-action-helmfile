@@ -3,7 +3,8 @@
 command=$1
 env=$2
 selectors=$3
-echo "Command: $command, environment: $env, selectors: $selectors"
+extra=$4
+echo "Command: $command, environment: $env, selectors: $selectors, extra: $extra"
 
 if [ -n "$env" ]; then
   env="-e $env"
@@ -13,5 +14,5 @@ if [ -n "$selectors" ]; then
   selectors="-l $selectors"
 fi
 
-echo "Run helmfile with arguments: $command $env $selectors"
-/usr/local/bin/helmfile $command $env $selectors
+echo "Run helmfile with arguments: $command $env $selectors $extra"
+/usr/local/bin/helmfile $command $env $selectors $extra
